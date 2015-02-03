@@ -13,7 +13,7 @@ description: >
   are given externally via dependency injection to Inject so it is
   not specified within the file. The data can then be 'interpreted'
   via the syntax that Inject has been told to use.
-version: 1.0.1
+version: 1.0.2
 author: Will Squire <will.mj.squire@googlemail.com>
 homepage: https://twitter.com/WillSquire
 dependencies:
