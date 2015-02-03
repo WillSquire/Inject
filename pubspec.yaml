@@ -1,0 +1,22 @@
+name: inject_module
+description: >
+  Inject is a form of pre-processor that replaces/'injects' data from a file
+  in accordance to data defined in a data map. Inject separates logic
+  from the file being read, and because of this, Inject has a variable
+  syntax that can adapt to different syntax conventions depending on
+  the information it's being used on.
+
+  Inject reads the contents of files and maps/replaces data matching the
+  specified key/value data specified in the data map. In a nutshell,
+  Inject takes any file and turns it into an 'inject' module, where
+  the data, the syntax scanned for and the dependencies themselves
+  are given externally via dependency injection to Inject so it is
+  not specified within the file. The data can then be 'interpreted'
+  via the syntax that Inject has been told to use.
+version: 1.0.1
+author: Will Squire <will.mj.squire@googlemail.com>
+homepage: https://twitter.com/WillSquire
+dependencies:
+  stream_trigger: ">=1.0.0 <2.0.0"
+dev_dependencies:
+  unittest: any
