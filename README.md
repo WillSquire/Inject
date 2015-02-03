@@ -79,7 +79,7 @@ class User {
 main() {
   // Specify the location of the file Inject will analyse
   // and process.
-  Uri uri = new Uri.file('../user_view.html');
+  File file = new File('../user_view.html');
 
   // Define either an Object or a Map to use as Inject's data
   // map. Inject uses the data maps' keys/variable names as
@@ -95,7 +95,7 @@ main() {
   // means inject triggers need these additional significations
   // before triggers can be detected in the data. If using an
   // object as the data map, call fromObject constructor.
-  InjectModule injectModule = new InjectModule.fromObject(uri, user);
+  InjectModule injectModule = new InjectModule.fromObject(file, user);
 
   // Inject can now analyse and transform the given file
   // data, returning the output as a stream.
@@ -131,7 +131,7 @@ main() {
   // have the corresponding value 'injected' in its place.
   // (Note, because Dart uses '$' for string interpolation,
   // it has been escaped with a '\').
-  InjectModule injectModule = new InjectModule(new Uri.file('../base.html'), dataMap, '\$');
+  InjectModule injectModule = new InjectModule(new File('../base.html'), dataMap, '\$');
 
   // Process
   injectModule.process()
@@ -177,11 +177,11 @@ main() {
   // This takes the output from those streams and injects them
   // at the given location when this stream is processed.
   Map<String,Object> dataMap = {
-    'header' : new InjectModule(new Uri.file('../header.html'), headerDataMap, prefix, suffix),
-    'footer' : new InjectModule(new Uri.file('../footer.html'), footerDataMap, prefix, suffix)
+    'header' : new InjectModule(new File('../header.html'), headerDataMap, prefix, suffix),
+    'footer' : new InjectModule(new File('../footer.html'), footerDataMap, prefix, suffix)
   };
 
-  InjectModule injectModule = new InjectModule(new Uri.file('../base.html'), dataMap, prefix, suffix);
+  InjectModule injectModule = new InjectModule(new File('../base.html'), dataMap, prefix, suffix);
 
   // Process
   injectModule.process()
